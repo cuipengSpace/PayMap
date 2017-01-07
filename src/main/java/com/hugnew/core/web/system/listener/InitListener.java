@@ -1,6 +1,5 @@
 package com.hugnew.core.web.system.listener;
 
-import com.unionpay.acp.sdk.SDKConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -23,12 +22,12 @@ public class InitListener implements javax.servlet.ServletContextListener {
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         context = WebApplicationContextUtils.getRequiredWebApplicationContext(servletContextEvent.getServletContext());
         //加载银联upop配置文件
-        SDKConfig.getConfig().loadPropertiesFromSrc();
+//        SDKConfig.getConfig().loadPropertiesFromSrc();
         String proPath = servletContextEvent.getServletContext().getRealPath("/");
-        SDKConfig config = SDKConfig.getConfig();
-        config.setSignCertDir(proPath + config.getSignCertDir());
-        config.setSignCertPath(proPath + config.getSignCertPath());
-        config.setValidateCertDir(proPath + config.getValidateCertDir());
+//        SDKConfig config = SDKConfig.getConfig();
+//        config.setSignCertDir(proPath + config.getSignCertDir());
+//        config.setSignCertPath(proPath + config.getSignCertPath());
+//        config.setValidateCertDir(proPath + config.getValidateCertDir());
         //缓存初始化忽略
     }
 
